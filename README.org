@@ -25,8 +25,8 @@ It provides easy access to topping up your account.
 
 Usage Notification should be improved. For example:
   + Use the OS X Notification Center
-  + Warn if usage % < days remaining %
-    + Currently, the 10% warning will likely trigger at the end of the billing cycle, even if it does no need to.
+  + Warn if usage % less than days remaining %
+    + Currently, the 10% warning will likely trigger at the end of the billing cycle, even if it does not need to.
   + Other ideas? Submit an [[https://github.com/mankoff/umma/issues][issue]]: https://github.com/mankoff/umma/issues
       
 * A Note on Security
