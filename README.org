@@ -23,9 +23,12 @@ It provides easy access to topping up your account.
 
 * To Do
 
-  Usage Notification should be improved. For example:
+Usage Notification should be improved. For example:
   + Use the OS X Notification Center
   + Warn if usage % < days remaining %
     + Currently, the 10% warning will likely trigger at the end of the billing cycle, even if it does no need to.
   + Other ideas? Submit an [[https://github.com/mankoff/umma/issues][issue]]: https://github.com/mankoff/umma/issues
       
+* A Note on Security
+
+This app requests the username and password used to log into the [[http://gousmobile.com][US Mobile Website]]. The username is stored in plain text on your computer. The password is stored in the OS X System Keychain.
