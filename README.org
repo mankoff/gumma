@@ -1,6 +1,6 @@
 * umma
 
-*U*s *M*obile *M*enubar *A*app
+<b>U</b>s <b>M</b>obile <b>M</b>enubar <b>A</b>app
 
 * Purpose
 
