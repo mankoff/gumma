@@ -21,7 +21,7 @@ It turns orange if any of remaining usage falls below 10%.
 
 It provides easy access to topping up your account.
 
-* TODO
+* To Do
 
   Usage Notification should be improved. For example:
   + Use the OS X Notification Center
