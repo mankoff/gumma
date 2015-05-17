@@ -1,5 +1,4 @@
 import rumps
-import time
 import mechanize
 from bs4 import BeautifulSoup
 import urllib2 
