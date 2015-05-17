@@ -73,7 +73,7 @@ class umma(rumps.App):
         else:
             passwd = keyring.get_password("umma", user)
             
-        dat = get_GUM_usage(user,passwd)
+        dat = get_UM_usage(user,passwd)
         m = self.menu
 
         str = ['Minutes','SMS','Data','Date']
