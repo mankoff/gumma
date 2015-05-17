@@ -1,0 +1,29 @@
+* umma
+
+*U*s *M*obile *M*enubar *A*app
+
+* Purpose
+
+If you use [[http://gousmobile.com][US Mobile]] phone service, this app sits in your OS X Menubar and tells:
+  + How many minutes you have used this month
+  + What percentage of your minutes you have used
+  + How many SMS you have used this month
+  + What percentage of your SMS you have used
+  + How much data you have used this month
+  + What percentage of your data you have used
+  + What percentage of your billing cycle remains
+  + How many days remain in your billing cycle
+  + When your billing cycle ends
+
+It turns orange if any of remaining usage falls below 10%.
+
+It provides easy access to topping up your account.
+
+* TODO
+
+  Usage Notification should be improved. For example:
+  + Use the OS X Notification Center
+  + Warn if usage % < days remaining %
+    + Currently, the 10% warning will likely trigger at the end of the billing cycle, even if it does no need to.
+  + Other ideas? Submit an [[https://github.com/mankoff/umma/issues][issue]]: https://github.com/mankoff/umma/issues
+      
