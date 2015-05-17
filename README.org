@@ -1,6 +1,6 @@
 * umma
 
-<b>U</b>s <b>M</b>obile <b>M</b>enubar <b>A</b>app
+Us Mobile Menubar App
 
 * Purpose
 
