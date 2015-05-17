@@ -2,6 +2,8 @@
 
 Us Mobile Menubar App
 
+[[./screenshot.png]]
+
 * Purpose
 
 If you use [[http://gousmobile.com][US Mobile]] phone service, this app sits in your OS X Menubar and tells:
