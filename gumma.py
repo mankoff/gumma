@@ -51,7 +51,7 @@ def get_GUM_usage(user, passwd):
             'Date':[date_end,days_left, days_pct]}
 
 
-class GUMMA(rumps.App):
+class gumma(rumps.App):
 
     @rumps.timer(60*30) # every 30 minutes
     def t(self,sender):
@@ -68,11 +68,11 @@ class GUMMA(rumps.App):
                              default_text="Your password")
             r = w.run()
             passwd = r.text
-            keyring.set_password("GUMMA", user, passwd)
+            keyring.set_password("gumma", user, passwd)
             with app.open('user', 'w') as f:
                 f.write(user)
         else:
-            passwd = keyring.get_password("GUMMA", user)
+            passwd = keyring.get_password("gumma", user)
             
         dat = get_GUM_usage(user,passwd)
         m = self.menu
@@ -96,7 +96,7 @@ class GUMMA(rumps.App):
 
     @rumps.clicked("About")
     def about(self, _):
-        rumps.alert("GUMMA","Go US Mobile Menu App: Track usage\nhttp://github.com/mankoff/GUMMA")
+        rumps.alert("gumma","Go US Mobile Menu App: Track usage\nhttp://github.com/mankoff/gumma")
         
     @rumps.clicked("Prefs")
     def prefs(self, _):
@@ -110,7 +110,7 @@ class GUMMA(rumps.App):
                          default_text="Your password")
         r = w.run()
         passwd = r.text
-        keyring.set_password("GUMMA", user, passwd)
+        keyring.set_password("gumma", user, passwd)
         with app.open('user', 'w') as f:
             f.write(user)
 
@@ -122,7 +122,7 @@ class GUMMA(rumps.App):
         webbrowser.open(url,new=2)
 
 if __name__ == "__main__":
-    app = GUMMA("GUMMA",
+    app = gumma("gumma",
                 quit_button=rumps.MenuItem('Quit', key='q'),
                 icon="phone.png")
     app.menu = [{"Minutes":["fetching..."]},
