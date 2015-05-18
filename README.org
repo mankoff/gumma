@@ -7,6 +7,7 @@ Us Mobile Menubar App
 * Purpose
 
 If you use [[http://gousmobile.com][US Mobile]] phone service, this app sits in your OS X Menubar and tells you the following:
+
   + Date your billing cycle ends
   + Percentage of billing cycle remaining
   + Days remaining in billing cycle
