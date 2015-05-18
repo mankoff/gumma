@@ -6,20 +6,20 @@ Us Mobile Menubar App
 
 * Purpose
 
-If you use [[http://gousmobile.com][US Mobile]] phone service, this app sits in your OS X Menubar and tells:
-  + How many minutes you have used this month
-  + What percentage of your minutes you have used
-  + How many SMS you have used this month
-  + What percentage of your SMS you have used
-  + How much data you have used this month
-  + What percentage of your data you have used
-  + What percentage of your billing cycle remains
-  + How many days remain in your billing cycle
-  + When your billing cycle ends
+If you use [[http://gousmobile.com][US Mobile]] phone service, this app sits in your OS X Menubar and tells you the following:
+  + Date your billing cycle ends
+  + Percentage of billing cycle remaining
+  + Days remaining in billing cycle
+  + Minutes remaining
+  + Percent of minutes remaining
+  + SMS remaining
+  + Percentage of SMS remaining
+  + Data (MB) remaining
+  + Percentage of data (MB) remaining
 
-It turns orange if any of remaining usage falls below 10%.
+The icon turns orange if any of remaining usage falls below 10%.
 
-It provides easy access to topping up your account.
+It also provides a link for easy access to top up your account.
 
 * To Do
 
