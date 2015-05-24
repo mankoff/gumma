@@ -1,0 +1,8 @@
+beautifulsoup4==4.3.2
+GChartWrapper==0.8
+keyring==5.3
+mechanize==0.2.5
+modulegraph==0.12.1
+pyobjc==3.0.4
+pyobjc-core==3.0.4
+rumps==0.2.1a0
