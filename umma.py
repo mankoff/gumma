@@ -9,10 +9,11 @@ import GChartWrapper as GC
 import os
 
 DIMS = (225,125)
+VERSION = "0.1.alpha"
 
 def get_UM_usage(user, passwd):
-    # DEBUG_LOCAL = True   # debug with local umma.html saved from account screen
     DEBUG_LOCAL = False
+    # DEBUG_LOCAL = True   # debug with local umma.html saved from account screen
     if not DEBUG_LOCAL:
         cj = cookielib.CookieJar()
         br = mechanize.Browser()
@@ -48,7 +49,8 @@ def get_UM_usage(user, passwd):
     date_end = label[0].find().text.split(" ")
     date_end = date_end[3] + ' ' + date_end[4].split(",")[0]
     days_pct = date.findAll("span", {"class": "sr-only"}).pop().text.split(" ")[0].split("%")[0]
-
+    days_pct = str(100-int(days_pct))
+    
     return {'Minutes': [mins_pct],
             'SMS': [txt_pct],
             'Data': [mb_pct],
@@ -77,8 +79,9 @@ class umma(rumps.App):
         m.clear()
 
         m.add("Service ends in " + dat['Date'][1] + " days on " + dat['Date'][2])
+        m.add(dat['Date'][0] + "% of billing cycle remains")
         m.add("Date")
-        icon = app.get_GC("Date", 100-int(dat["Date"][0]))
+        icon = app.get_GC("Date", dat["Date"][0])
         m["Date"].set_callback(app.add)
         m["Date"].set_icon(icon, dimensions=DIMS)
         m["Date"].title = ""
@@ -86,7 +89,7 @@ class umma(rumps.App):
 
         str = ['Minutes', 'SMS', 'Data']
         for s in str:
-            m.add(dat[s][0] + " " + s + " Unused")
+            m.add(dat[s][0] + "% of " + s + " Unused")
             m.add(s)
             #print s, dat[s][0]
             icon = app.get_GC(s, dat[s][0])
@@ -95,6 +98,7 @@ class umma(rumps.App):
             m[s].title = ""
             m.add(None)
 
+        m.add("Version: " + VERSION)
         m.add("About")
         m["About"].set_callback(app.about)
         m.add("Prefs")
@@ -106,7 +110,7 @@ class umma(rumps.App):
         low = [float(l) for l in low]
         days = float(dat["Date"][0])
         # Less % of something than % of days? Warn me.
-        thresh = (min(low) < (100-days))
+        thresh = (min(low) < (days))
         if thresh:
             self.icon = "phone_orange.png"
         else:
