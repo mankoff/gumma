@@ -24,6 +24,10 @@ In addition, it tells you:
 
 It also provides a link for easy access to top up your account.
 
+* Usage
+
+Currently this is not packaged as a user-friendly downloadable stand-alone app. To use it, clone the github repository, make sure all python dependencies are installed, and then run =python ./umma.py=. Note that this application depends on rumps (https://github.com/jaredks/rumps), but due to a bug you should install the =bugfixd-nobundleid= version from zollman (https://github.com/zollman/rumps/tree/bugfix-nobundleid).
+
 * To Do
 
 Usage Notification should be improved. For example:
