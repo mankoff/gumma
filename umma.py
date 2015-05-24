@@ -68,7 +68,7 @@ class umma(rumps.App):
         G.save(f.name)
         return f.name
 
-    @rumps.timer(60*30)  # every 30 minutes
+    @rumps.timer(60*60*3)  # every 3 hours
     #@rumps.timer(3)  # every 3 seconds
     def t(self, sender):
         user, passwd = app.get_user_pass(self)
