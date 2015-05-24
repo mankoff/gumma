@@ -106,7 +106,7 @@ class umma(rumps.App):
         low = [float(l) for l in low]
         days = float(dat["Date"][0])
         # Less % of something than % of days? Warn me.
-        thresh = (min(low) < days)
+        thresh = (min(low) < (100-days))
         if thresh:
             self.icon = "phone_orange.png"
         else:
