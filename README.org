@@ -6,30 +6,37 @@ Us Mobile Menubar App
 
 * Purpose
 
-If you use [[http://gousmobile.com][US Mobile]] phone service, this app sits in your OS X Menubar and tells you the following:
+If you use [[http://gousmobile.com][US Mobile]] phone service, this app sits in your OS X Menubar and graphically shows you the percentage remaining of billing cycle, minutes, SMS, and data. 
+
+The icon turns orange if the percent remaining of a resource falls below the percent remaining of your billing cycle.
+
+This lets you quickly see if you are using more resources than you purchased.
+
+In addition, it tells you:
 
   + Date your billing cycle ends
-  + Percentage of billing cycle remaining
   + Days remaining in billing cycle
   + Minutes remaining
-  + Percent of minutes remaining
   + SMS remaining
-  + Percentage of SMS remaining
   + Data (MB) remaining
-  + Percentage of data (MB) remaining
-
-The icon turns orange if any of remaining usage falls below 10%.
 
 It also provides a link for easy access to top up your account.
 
 * To Do
 
 Usage Notification should be improved. For example:
-  + Use the OS X Notification Center
-  + Warn if usage % less than days remaining %
-    + Currently, the 10% warning will likely trigger at the end of the billing cycle, even if it does not need to.
+  + Package and release as an App
+  + Make use of the OS X Notification Center
+  + Don't rely on the deprecated Google Charts API
+  + Customize the warning algorithm
   + Other ideas? Submit an [[https://github.com/mankoff/umma/issues][issue]]: https://github.com/mankoff/umma/issues
       
 * A Note on Security
 
 This app requests the username and password used to log into the [[http://gousmobile.com][US Mobile Website]]. The username is stored in plain text on your computer. The password is stored in the OS X System Keychain.
+
+* License
+
+#+BEGIN_HTML
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">umma</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Ken Mankoff</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="http://kenmankoff.com" rel="cc:morePermissions">http://kenmankoff.com</a>.
+#+END_HTML
