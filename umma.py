@@ -177,5 +177,4 @@ if __name__ == "__main__":
 
     # check if first run and/or no credentials
     app.get_user_pass("umma")
-    app.run(debug=True)
-
+    app.run()
