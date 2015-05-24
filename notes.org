@@ -1,0 +1,68 @@
+
+** Remove ipython from path
+   Only run anaconda setup if in iTerm, so do some work in Terminal.app
+   Then remove ~/bin/
+   PATH=$(echo "$PATH" | sed -e 's/:\/Users\/mankoff\/bin$//')
+   PATH=/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:
+** Set up venv from system python
+   http://docs.python-guide.org/en/latest/dev/virtualenvs/
+   Can activate venv from iTerm from now on
+** Install packages including pyobjc.
+   pip install pyobjc
+   pip install mechanize
+   # rumps: `python setup.py install` from the bugfix branch
+   pip install BeautifulSoup4
+   pip install keyring
+   pip install GChartWrapper
+** Fix weird bug
+   http://www.marinamele.com/from-a-python-script-to-a-portable-mac-application-with-py2app
+   edit
+   venv/lib/python2.7/site-packages/py2app/recipes/virtualenv.py
+   and change scan_code and load_module to _scan_code and _load_module
+
+** NOTDONE py2app
+   CLOSED: [2015-05-24 Sun 09:24]
+   :LOGBOOK:
+   - State "NOTDONE"    from ""           [2015-05-24 Sun 09:24]
+   :END:
+
+   https://pythonhosted.org/py2app/tutorial.html
+
+   trash build dist setup.py
+
+   py2applet --make-setup umma.py # overwrite
+
+   python setup.py py2app -A # test
+   # WORKS!
+
+** NOTDONE Deployment
+   CLOSED: [2015-05-24 Sun 09:24]
+   :LOGBOOK:
+   - State "NOTDONE"    from ""           [2015-05-24 Sun 09:24]
+   :END:
+
+   python setup.py py2app
+   # appears to work, but:
+
+   #+BEGIN_EXAMPLE
+Modules not found (conditional imports):
+ * Image (GChartWrapper.GChart)
+ * PIL (GChartWrapper.GChart)
+ * builtins (objc._pycoder)
+ * copyreg (objc._pycoder)
+ * html (bs4.builder._htmlparser)
+ * importlib._bootstrap (pkg_resources)
+ * urllib.parse (GChartWrapper.constants, pkg_resources)
+ * urllib.request (GChartWrapper.constants)
+   #+END_EXAMPLE
+
+
+** PyInstaller
+
+pyinstaller -w umma.py
+
+** cx_freeze
+
+pip install cx_freeze
+cxfreeze-quickstart
+
