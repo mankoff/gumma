@@ -1,6 +1,8 @@
 * umma
 
-Us Mobile Menubar App
+#+BEGIN_HTML
+<b>U</b>s <b>M</B>obile <b>M</b>enubar <b>A</b>pp
+#+END_HTML
 
 [[./screenshot.png]]
 
