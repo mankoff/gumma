@@ -30,12 +30,11 @@ Currently this is not packaged as a user-friendly downloadable stand-alone app. 
 
 * To Do
 
-Usage Notification should be improved. For example:
-  + Package and release as an App
-  + Make use of the OS X Notification Center
-  + Don't rely on the deprecated Google Charts API
-  + Customize the warning algorithm
-  + Other ideas? Submit an [[https://github.com/mankoff/umma/issues][issue]]: https://github.com/mankoff/umma/issues
+  + [ ] Package and release as an App
+  + [ ] Make use of the OS X Notification Center
+  + [ ] Don't rely on the deprecated Google Charts API
+  + [ ] Customize the warning algorithm
+  + [ ] Other ideas? Submit an [[https://github.com/mankoff/umma/issues][issue]]: https://github.com/mankoff/umma/issues
       
 * A Note on Security
 
