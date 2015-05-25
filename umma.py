@@ -99,6 +99,8 @@ class umma(rumps.App):
             m.add(None)
 
         m.add("Version: " + VERSION)
+        m.add("Update")
+        m["Update"].set_callback(app.t)
         m.add("About")
         m["About"].set_callback(app.about)
         m.add("Prefs")
@@ -125,7 +127,7 @@ class umma(rumps.App):
 
     @rumps.clicked("Prefs")
     def prefs(self, _):
-        app.get_user_pass(self)
+        app.get_user_pass("umma", reset=True)
 
     @rumps.clicked("Add")
     def add(self, _):
@@ -133,7 +135,15 @@ class umma(rumps.App):
         url = "https://gousmobile.com/my/account"
         webbrowser.open(url, new=2)
 
-    def get_user_pass(self, _):
+    def get_user_pass(self, _, reset=False):
+
+        if reset is True:
+            with app.open('user', 'r') as f:
+                user = f.read()
+            keyring.delete_password("umma", user) # delete password
+            with app.open('user','w') as f:
+                os.remove(f.name)
+        
         try:
             with app.open('user', 'r') as f:
                 user = f.read()
@@ -163,17 +173,6 @@ if __name__ == "__main__":
     app = umma("umma",
                quit_button=rumps.MenuItem('Quit', key='q'),
                icon="phone.png")
-    # app.menu = ["DateInfo", "Date",
-    #             None,
-    #             "Minutes Info", "Minutes",
-    #             None,
-    #             "SMS Info", "SMS",
-    #             None,
-    #             "Data Info", "Data",
-    #             None,
-    #             #"Add",
-    #             #None,
-    #             "About", "Prefs"]
 
     # check if first run and/or no credentials
     app.get_user_pass("umma")
