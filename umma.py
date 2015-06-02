@@ -50,6 +50,7 @@ def get_UM_usage(user, passwd):
     date_end = date_end[3] + ' ' + date_end[4].split(",")[0]
     days_pct = date.findAll("span", {"class": "sr-only"}).pop().text.split(" ")[0].split("%")[0]
     days_pct = str(100-int(days_pct))
+    days_left = str(int(days_left)+1)
     
     return {'Minutes': [mins_pct],
             'SMS': [txt_pct],
@@ -177,3 +178,5 @@ if __name__ == "__main__":
     # check if first run and/or no credentials
     app.get_user_pass("umma")
     app.run()
+
+
